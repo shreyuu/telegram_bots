@@ -10,7 +10,7 @@ bot_token = "6618326634:AAHBWenyLShJUYLEaWxi3u3jBYqHz4EDri0"
 bot = telegram.Bot(token=bot_token)
 
 # Define the command handler for the /quote command
-def quote(update, context):
+def quote(update: Update, context: CallbackContext):
     try:
         # Fetch a random romantic quote from the quotes.rest API
         response = requests.get("https://quotes.rest/qod?category=love")
