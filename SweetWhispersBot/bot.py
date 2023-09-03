@@ -13,7 +13,7 @@ bot = telegram.Bot(token=bot_token)  # Use 'token', not 'TOKEN'
 def quote(update: telegram.Update, context: CallbackContext):
     try:
         # Fetch a random romantic quote from the quotes.rest API
-        response = requests.get("https://quotes.rest/qod?category=love")
+        response = requests.get("https://www.shutterfly.com/ideas/i-love-you-quotes/")
         data = response.json()
         quote_text = data["contents"]["quotes"][0]["quote"]
 
