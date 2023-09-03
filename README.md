@@ -21,6 +21,7 @@ This repository serves as a showcase for Telegram bots developed by me ( Shreyas
 
 - **Description:** This is a simple Telegram bot that fetches random quotes from a specified category and sends them to users when they use the `/quote` command.
 - **GitHub Repository:** [SweetWhispersBot](https://github.com/shreyuu/telegram_bots/tree/main/SweetWhispersBot)
+- **Status:** under-development
 
 ## Getting Started
 
