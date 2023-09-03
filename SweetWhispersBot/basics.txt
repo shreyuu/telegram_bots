@@ -1,0 +1,3 @@
+
+bot_token = "6618326634:AAHBWenyLShJUYLEaWxi3u3jBYqHz4EDri0"
+python lib version = pip install python-telegram-bot==13.7
