@@ -1,16 +1,16 @@
 import telegram
-from telegram import Update
-from telegram.ext import Updater, CommandHandler
+from telegram.ext import Updater, CommandHandler, CallbackContext
 import requests
+from bs4 import BeautifulSoup
 
 # Replace with your Telegram bot token
 bot_token = "6618326634:AAHBWenyLShJUYLEaWxi3u3jBYqHz4EDri0"
 
 # Initialize the Telegram bot
-bot = telegram.Bot(token=bot_token)
+bot = telegram.Bot(token=bot_token)  # Use 'token', not 'TOKEN'
 
 # Define the command handler for the /quote command
-def quote(update: Update, context: CallbackContext):
+def quote(update: telegram.Update, context: CallbackContext):
     try:
         # Fetch a random romantic quote from the quotes.rest API
         response = requests.get("https://quotes.rest/qod?category=love")
