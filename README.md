@@ -36,8 +36,8 @@ Contributions to any of the bots in this repository are welcome. If you'd like t
 
 ## License
 
-This repository is open-source and available under the [LICENSE](LICENSE) terms specified for each individual bot. Refer to the respective bot's repository for licensing information.
+Contributions to any of the bots in this repository are welcome. If you'd like to contribute to a specific bot or provide feedback, please visit the bot's GitHub repository and follow the guidelines and instructions outlined there.
 
-If you have any questions or feedback regarding any of the bots in this repository, feel free to [contact me](mailto:youremail@example.com).
+If you have any questions or feedback regarding any of the bots in this repository, feel free to [contact me](mailto:shreyashmeshram0031@gmail.com).
 
 Enjoy using these Telegram bots!
