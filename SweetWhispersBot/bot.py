@@ -1,21 +1,23 @@
 import telegram
 from telegram.ext import Updater, CommandHandler, CallbackContext
 import requests
+import creds
+import logging
 
-# Replace with your Telegram bot token
-bot_token = "6618326634:AAHBWenyLShJUYLEaWxi3u3jBYqHz4EDri0"
 
-# Initialize the Telegram bot
-bot = telegram.Bot(token=bot_token)
+logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
+logger = logging.getLogger(__name__)
+
+bot = telegram.Bot(token=creds.TELEGRAM_API_TOKEN)
 
 # Define the command handler for the /quote command
 def quote(update: telegram.Update, context: CallbackContext):
     try:
         category = 'love'
-        api_url = 'https://api.api-ninjas.com/v1/quotes?category={}'.format(category)
-        response = requests.get(api_url, headers={'X-Api-Key': 'zySNTDohuRqGSxslulcRGg==MCoHoPEVDWUeYTeo'})  # Replace 'YOUR_API_KEY' with your actual API key
+        api_url = 'https://api.api-ninjas.com/v1/quotes?category=love'
+        response = requests.get(api_url, headers={'X-Api-Key':  creds.NINJA_API_KEY})
         if response.status_code == requests.codes.ok:
-            quote_data = response.json()
+            quote_data = response.json()[0]
             quote_text = quote_data.get("quote", "No quote available")
 
             # Send the quote to the user
@@ -28,12 +30,12 @@ def quote(update: telegram.Update, context: CallbackContext):
 
 def main():
     # Create an Updater for the bot
-    updater = Updater(token=bot_token, use_context=True)
+    updater = Updater(token=creds.TELEGRAM_API_TOKEN, use_context=True)
     dispatcher = updater.dispatcher
 
     # Add a command handler for the /quote command
     dispatcher.add_handler(CommandHandler("quote", quote))
-
+    print("heyy")
     # Start the bot
     updater.start_polling()
     updater.idle()
