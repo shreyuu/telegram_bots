@@ -12,7 +12,7 @@ bot = telegram.Bot(token=bot_token)
 def quote(update: telegram.Update, context: CallbackContext):
     try:
         category = 'love'
-        api_url = 'https://api.api-ninjas.com/v1/quotes?category={}'.format(category)
+        api_url = 'https://api.api-ninjas.com/v1/quotes?category=love'
         response = requests.get(api_url, headers={'X-Api-Key': 'zySNTDohuRqGSxslulcRGg==MCoHoPEVDWUeYTeo'})  # Replace 'YOUR_API_KEY' with your actual API key
         if response.status_code == requests.codes.ok:
             quote_data = response.json()
